@@ -1093,6 +1093,153 @@ html[data-atlas-style="gold"] header::before{
 @media print{.mobile-bottom-nav,.mobile-more-mask{display:none!important}}
 </style>
 
+
+<style id="v1023-conclusion-bento">
+/* ===== V10.24: conclusion hero bento redesign ===== */
+#economics .conclusion-hero{
+  display:grid!important;
+  grid-template-columns:minmax(320px,1.18fr) repeat(2,minmax(250px,1fr))!important;
+  grid-template-areas:
+    "choke choke profit"
+    "realize cash price"!important;
+  gap:14px!important;
+  margin:20px 0 24px!important;
+  align-items:stretch!important;
+}
+#economics .conclusion-card{
+  --ca:var(--cyan);
+  position:relative!important;
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:210px!important;
+  padding:20px 20px 18px!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  border:1px solid color-mix(in srgb,var(--ca) 34%,var(--line))!important;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--card) 94%,transparent),color-mix(in srgb,var(--bg2) 92%,transparent))!important;
+  box-shadow:0 18px 46px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.035)!important;
+}
+#economics .conclusion-card::before{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--ca),color-mix(in srgb,var(--ca) 18%,transparent) 72%,transparent);
+  z-index:0;
+}
+#economics .conclusion-card::after{
+  content:"";
+  position:absolute;
+  width:150px;height:150px;
+  right:-70px;top:-70px;
+  border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--ca) 16%,transparent),transparent 68%);
+  pointer-events:none;
+  z-index:-1;
+}
+#economics .conclusion-card.choke{grid-area:choke;--ca:#ff667d;min-height:225px!important;padding:24px 24px 22px!important}
+#economics .conclusion-card.profit{grid-area:profit;--ca:#ffad61}
+#economics .conclusion-card.realize{grid-area:realize;--ca:#b68cff}
+#economics .conclusion-card.cash{grid-area:cash;--ca:#52d6a7}
+#economics .conclusion-card.price{grid-area:price;--ca:#6ea8ff}
+#economics .conclusion-kicker{
+  align-self:flex-start!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  min-height:27px!important;
+  margin:0 0 12px!important;
+  padding:5px 9px!important;
+  border-radius:999px!important;
+  border:1px solid color-mix(in srgb,var(--ca) 45%,var(--line))!important;
+  background:color-mix(in srgb,var(--ca) 10%,var(--card2))!important;
+  color:var(--ca)!important;
+  font-size:10px!important;
+  font-weight:950!important;
+  line-height:1!important;
+  letter-spacing:.055em!important;
+  text-transform:none!important;
+  white-space:nowrap!important;
+}
+#economics .conclusion-card h3{
+  margin:0 0 10px!important;
+  font-size:clamp(18px,1.45vw,22px)!important;
+  line-height:1.28!important;
+  letter-spacing:-.018em!important;
+}
+#economics .conclusion-card.choke h3{
+  font-size:clamp(23px,2vw,30px)!important;
+  max-width:90%!important;
+  margin-bottom:14px!important;
+}
+#economics .conclusion-card p{
+  margin:0!important;
+  color:var(--muted)!important;
+  font-size:12.5px!important;
+  line-height:1.75!important;
+  font-weight:550!important;
+}
+#economics .conclusion-card.choke p{
+  font-size:13.2px!important;
+  line-height:1.82!important;
+  max-width:95%!important;
+}
+#economics .conclusion-card .answer{
+  margin-top:auto!important;
+  padding:12px 13px!important;
+  border:1px solid color-mix(in srgb,var(--ca) 22%,var(--line))!important;
+  border-radius:12px!important;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--ca) 7%,var(--card2)),color-mix(in srgb,var(--card2) 90%,transparent))!important;
+  font-size:12.6px!important;
+  line-height:1.72!important;
+  font-weight:780!important;
+}
+#economics .conclusion-card.choke .answer{
+  margin-top:18px!important;
+  padding:15px 16px!important;
+  font-size:13.7px!important;
+  line-height:1.78!important;
+}
+html[data-atlas-style="gold"] #economics .conclusion-card{
+  box-shadow:0 22px 56px rgba(0,0,0,.31),inset 0 1px 0 rgba(255,238,194,.035)!important;
+}
+html[data-atlas-style="gold"] #economics .conclusion-card .answer{
+  background:linear-gradient(135deg,color-mix(in srgb,var(--ca) 8%,rgba(33,25,13,.88)),rgba(18,14,9,.72))!important;
+}
+@media(max-width:1120px){
+  #economics .conclusion-hero{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-areas:"choke choke" "profit realize" "cash price"!important;
+  }
+  #economics .conclusion-card.choke{min-height:240px!important}
+  #economics .conclusion-card.choke h3{max-width:none!important}
+}
+@media(max-width:720px){
+  #economics .conclusion-hero{
+    grid-template-columns:1fr!important;
+    grid-template-areas:"choke" "profit" "realize" "cash" "price"!important;
+    gap:10px!important;
+  }
+  #economics .conclusion-card,
+  #economics .conclusion-card.choke{
+    min-height:0!important;
+    padding:15px 15px 14px!important;
+    border-radius:15px!important;
+  }
+  #economics .conclusion-card h3,
+  #economics .conclusion-card.choke h3{
+    max-width:none!important;
+    font-size:18px!important;
+    margin-bottom:8px!important;
+  }
+  #economics .conclusion-card p,
+  #economics .conclusion-card.choke p{font-size:11.5px!important;line-height:1.7!important}
+  #economics .conclusion-card .answer,
+  #economics .conclusion-card.choke .answer{margin-top:12px!important;padding:10px 11px!important;font-size:11.4px!important;line-height:1.68!important}
+  #economics .conclusion-kicker{margin-bottom:9px!important}
+}
+</style>
+
 </head>
 <body>
 <header id="home"><div class="gridbg"></div><div class="hero">
@@ -2519,7 +2666,7 @@ html[data-atlas-style="gold"] header::before{
     </div>
   </section>
 
-  <div class='valuation-rest-head'><div><span>FULL VALUATION SET</span><h4>其他估值模型</h4></div><p>其余11只按原估值模型继续展示，点击公司、细分或结构图即可与产业链研究联动。</p></div>
+  <div class='valuation-rest-head'><div><span>FULL VALUATION SET</span><h4>其他估值模型</h4></div><p>其余11只按原估值模型继续展示，并同步附上你的基本面点评；点击公司、细分或结构图即可与产业链研究联动。</p></div>
   <div class='valmodel-grid'>
     <article class="valmodel-card complete" id="valuation-688041">
 <div class="valmodel-top">
@@ -2527,6 +2674,7 @@ html[data-atlas-style="gold"] header::before{
 <span class="valmodel-code">688041</span>
 </div>
 <div class="valmodel-source">数据来源：本次高清截图 </div>
+<div class="valuation-fundamental-comment"><b>我的基本面点评</b><br/>卡脖子国产替代技术壁垒高，营收规模比寒武纪大，利润增长率和绝对值比寒武纪小，一样现金流有问题。</div>
 <div class="valmodel-table-wrap">
 <table class="valmodel-table">
 <thead><tr><th>情景</th><th>PE</th><th>扣非净利增速（TTM）%</th><th>相对现价</th></tr></thead>
@@ -2549,6 +2697,7 @@ html[data-atlas-style="gold"] header::before{
 <span class="valmodel-code">688825</span>
 </div>
 <div class="valmodel-source">数据来源：用户明确给定；赔率/期望值按同一模型推导 <span class="derived-pill">赔率/期望值为按截图同口径推导</span></div>
+<div class="valuation-fundamental-comment"><b>我的基本面点评</b><br/>卡脖子国产替代技术壁垒高，营收利润现金流量都很好，总市值较大。</div>
 <div class="valmodel-table-wrap">
 <table class="valmodel-table">
 <thead><tr><th>情景</th><th>PE</th><th>扣非净利增速（TTM）%</th><th>相对现价</th></tr></thead>
@@ -2571,6 +2720,7 @@ html[data-atlas-style="gold"] header::before{
 <span class="valmodel-code">688008</span>
 </div>
 <div class="valmodel-source">数据来源：本次高清截图 </div>
+<div class="valuation-fundamental-comment"><b>我的基本面点评</b><br/>卡脖子技术一般，营收和利润中等水平，现金流优秀，毛利较高。</div>
 <div class="valmodel-table-wrap">
 <table class="valmodel-table">
 <thead><tr><th>情景</th><th>PE</th><th>扣非净利增速（TTM）%</th><th>相对现价</th></tr></thead>
@@ -2593,6 +2743,7 @@ html[data-atlas-style="gold"] header::before{
 <span class="valmodel-code">002371</span>
 </div>
 <div class="valmodel-source">数据来源：本次高清截图 </div>
+<div class="valuation-fundamental-comment"><b>我的基本面点评</b><br/>没有明显短板的综合型龙头，也没有排名第一的优势。</div>
 <div class="valmodel-table-wrap">
 <table class="valmodel-table">
 <thead><tr><th>情景</th><th>PE</th><th>扣非净利增速（TTM）%</th><th>相对现价</th></tr></thead>
@@ -2615,6 +2766,7 @@ html[data-atlas-style="gold"] header::before{
 <span class="valmodel-code">688012</span>
 </div>
 <div class="valmodel-source">数据来源：本次高清截图 </div>
+<div class="valuation-fundamental-comment"><b>我的基本面点评</b><br/>没有明显短板的综合型龙头，也没有排名第一的优势。</div>
 <div class="valmodel-table-wrap">
 <table class="valmodel-table">
 <thead><tr><th>情景</th><th>PE</th><th>扣非净利增速（TTM）%</th><th>相对现价</th></tr></thead>
@@ -2637,6 +2789,7 @@ html[data-atlas-style="gold"] header::before{
 <span class="valmodel-code">300308</span>
 </div>
 <div class="valmodel-source">数据来源：本次高清截图 </div>
+<div class="valuation-fundamental-comment"><b>我的基本面点评</b><br/>利润增长很大，订单多，不过卡脖子技术壁垒较一般。</div>
 <div class="valmodel-table-wrap">
 <table class="valmodel-table">
 <thead><tr><th>情景</th><th>PE</th><th>扣非净利增速（TTM）%</th><th>相对现价</th></tr></thead>
@@ -2659,6 +2812,7 @@ html[data-atlas-style="gold"] header::before{
 <span class="valmodel-code">300502</span>
 </div>
 <div class="valmodel-source">数据来源：本次高清截图 </div>
+<div class="valuation-fundamental-comment"><b>我的基本面点评</b><br/>利润增长很大，订单多，不过卡脖子技术壁垒较一般。</div>
 <div class="valmodel-table-wrap">
 <table class="valmodel-table">
 <thead><tr><th>情景</th><th>PE</th><th>扣非净利增速（TTM）%</th><th>相对现价</th></tr></thead>
@@ -2681,6 +2835,7 @@ html[data-atlas-style="gold"] header::before{
 <span class="valmodel-code">300476</span>
 </div>
 <div class="valmodel-source">数据来源：本次高清截图 </div>
+<div class="valuation-fundamental-comment"><b>我的基本面点评</b><br/>利润增长很大，订单多，不过卡脖子技术壁垒较一般。</div>
 <div class="valmodel-table-wrap">
 <table class="valmodel-table">
 <thead><tr><th>情景</th><th>PE</th><th>扣非净利增速（TTM）%</th><th>相对现价</th></tr></thead>
@@ -2703,6 +2858,7 @@ html[data-atlas-style="gold"] header::before{
 <span class="valmodel-code">002463</span>
 </div>
 <div class="valmodel-source">数据来源：本次高清截图 </div>
+<div class="valuation-fundamental-comment"><b>我的基本面点评</b><br/>利润增长很大，订单多，不过卡脖子技术壁垒较一般。</div>
 <div class="valmodel-table-wrap">
 <table class="valmodel-table">
 <thead><tr><th>情景</th><th>PE</th><th>扣非净利增速（TTM）%</th><th>相对现价</th></tr></thead>
@@ -2725,6 +2881,7 @@ html[data-atlas-style="gold"] header::before{
 <span class="valmodel-code">300604</span>
 </div>
 <div class="valmodel-source">数据来源：本次高清截图 </div>
+<div class="valuation-fundamental-comment"><b>我的基本面点评</b><br/>增速快，增长空间大，现金流为负。</div>
 <div class="valmodel-table-wrap">
 <table class="valmodel-table">
 <thead><tr><th>情景</th><th>PE</th><th>扣非净利增速（TTM）%</th><th>相对现价</th></tr></thead>
@@ -2747,6 +2904,7 @@ html[data-atlas-style="gold"] header::before{
 <span class="valmodel-code">688630</span>
 </div>
 <div class="valmodel-source">数据来源：本次高清截图 </div>
+<div class="valuation-fundamental-comment"><b>我的基本面点评</b><br/>半导体PCB设备，营收利润现金流较好，卡脖子水平一般。</div>
 <div class="valmodel-table-wrap">
 <table class="valmodel-table">
 <thead><tr><th>情景</th><th>PE</th><th>扣非净利增速（TTM）%</th><th>相对现价</th></tr></thead>
